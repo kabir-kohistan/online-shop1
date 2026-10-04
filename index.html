@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>بازارینو | فروشگاه آنلاین</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>🛍️</span>
+            بازارینو
+        </div>
+
+        <nav class="nav">
+            <a href="#home">خانه</a>
+            <a href="#products">محصولات</a>
+            <a href="#offers">تخفیف‌ها</a>
+            <a href="#about">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="icon-btn" onclick="toggleDarkMode()" title="حالت تاریک">
+                🌙
+            </button>
+
+            <button class="icon-btn cart-button" onclick="openCart()">
+                🛒
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    🔥 پیشنهادهای ویژه امروز
+                </span>
+
+                <h1>
+                    خرید آسان،
+                    <span>زندگی آسان‌تر</span>
+                </h1>
+
+                <p>
+                    بهترین محصولات را با قیمت مناسب و کیفیت عالی
+                    در بازارینو پیدا کنید.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#products" class="primary-btn">
+                        مشاهده محصولات
+                    </a>
+
+                    <a href="#offers" class="secondary-btn">
+                        تخفیف‌های امروز
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                🛒
+            </div>
+
+        </section>
+
+
+        <!-- Features -->
+
+        <section class="features">
+
+            <div class="feature">
+                <div>🚚</div>
+                <h3>ارسال سریع</h3>
+                <p>ارسال سریع سفارش‌ها</p>
+            </div>
+
+            <div class="feature">
+                <div>🔒</div>
+                <h3>خرید امن</h3>
+                <p>پرداخت کاملاً امن</p>
+            </div>
+
+            <div class="feature">
+                <div>💎</div>
+                <h3>کیفیت عالی</h3>
+                <p>محصولات باکیفیت</p>
+            </div>
+
+            <div class="feature">
+                <div>🎧</div>
+                <h3>پشتیبانی</h3>
+                <p>پشتیبانی در تمام روز</p>
+            </div>
+
+        </section>
+
+
+        <!-- Products -->
+
+        <section class="products-section" id="products">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-label">
+                        فروشگاه
+                    </span>
+
+                    <h2>
+                        محصولات محبوب
+                    </h2>
+                </div>
+
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="🔎 جستجوی محصول..."
+                        oninput="filterProducts()"
+                    >
+
+                    <select id="category" onchange="filterProducts()">
+
+                        <option value="all">
+                            همه دسته‌ها
+                        </option>
+
+                        <option value="mobile">
+                            موبایل
+                        </option>
+
+                        <option value="laptop">
+                            لپ‌تاپ
+                        </option>
+
+                        <option value="audio">
+                            صوتی
+                        </option>
+
+                        <option value="accessory">
+                            لوازم جانبی
+                        </option>
+
+                    </select>
+
+                    <select id="sort" onchange="filterProducts()">
+
+                        <option value="default">
+                            مرتب‌سازی
+                        </option>
+
+                        <option value="low">
+                            ارزان‌ترین
+                        </option>
+
+                        <option value="high">
+                            گران‌ترین
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div id="products-container" class="products-grid"></div>
+
+        </section>
+
+
+        <!-- Offer -->
+
+        <section class="offer" id="offers">
+
+            <div>
+
+                <span>
+                    ⚡ پیشنهاد محدود
+                </span>
+
+                <h2>
+                    تا ۳۰٪ تخفیف
+                </h2>
+
+                <p>
+                    محصولات منتخب را با قیمت ویژه خریداری کنید.
+                </p>
+
+                <a href="#products" class="primary-btn">
+                    خرید کنید
+                </a>
+
+            </div>
+
+            <div class="offer-icon">
+                🎁
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+
+        <section class="about" id="about">
+
+            <div class="about-icon">
+                🏪
+            </div>
+
+            <div>
+
+                <span class="section-label">
+                    درباره ما
+                </span>
+
+                <h2>
+                    بازارینو، فروشگاه آنلاین شما
+                </h2>
+
+                <p>
+                    هدف ما فراهم کردن یک تجربه خرید ساده،
+                    سریع و مطمئن برای مشتریان است.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Cart -->
+
+    <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
+    <aside id="cart-sidebar" class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>
+                🛒 سبد خرید
+            </h2>
+
+            <button onclick="closeCart()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div id="cart-items" class="cart-items">
+
+            <div class="empty-cart">
+                🛒
+                <p>سبد خرید شما خالی است</p>
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total-row">
+
+                <span>
+                    مجموع:
+                </span>
+
+                <strong>
+                    <span id="cart-total">0</span>
+                    افغانی
+                </strong>
+
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+                ادامه به پرداخت 💳
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Toast -->
+
+    <div id="toast" class="toast">
+        محصول به سبد خرید اضافه شد 🛒
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>🛍️ بازارینو</h3>
+                <p>
+                    خرید آسان، سریع و مطمئن.
+                </p>
+            </div>
+
+            <div>
+                <h4>دسترسی سریع</h4>
+                <a href="#home">خانه</a>
+                <a href="#products">محصولات</a>
+                <a href="#offers">تخفیف‌ها</a>
+            </div>
+
+            <div>
+                <h4>ارتباط با ما</h4>
+                <p>📞 0792278534</p>
+                <p>📧 kabirqayoumi87@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 بازارینو - تمامی حقوق محفوظ است.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
